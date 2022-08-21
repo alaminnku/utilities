@@ -1,0 +1,36 @@
+.product_and_action {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  overflow-x: hidden;
+}
+
+.product {
+  display: flex;
+  width: 100vw;
+  padding: 16px;
+  background-color: whitesmoke;
+  transition: width 0.5s ease;
+}
+
+.product p:first-child {
+  margin-right: 1rem;
+}
+
+.action {
+  position: absolute;
+  right: calc(var(--action_width) * -1);
+  padding: 16px;
+  color: white;
+  background-color: red;
+  transition: right 0.5s ease;
+}
+
+.product.swiped {
+  width: calc(100vw - var(--action_width));
+}
+
+.product.swiped + .action {
+  right: 0%;
+}
